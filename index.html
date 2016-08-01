@@ -13,11 +13,11 @@
         // React component
         var HelloWorld = React.createClass({
             propTypes: {
-                name: React.PropTypes.string
+                name: React.PropTypes.string.isRequired
             },
             getDefaultProps: function () {
                 return {
-                    name: "Scott"
+                    // name: "Scott"
                 }
             },
             render: function () {
@@ -27,7 +27,7 @@
             }
         });
         ReactDOM.render(
-            <HelloWorld name={false}/>,
+            <HelloWorld />,
             document.getElementById('area')
         );
     </script>
