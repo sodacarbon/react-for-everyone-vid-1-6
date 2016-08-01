@@ -12,6 +12,11 @@
     <script type="text/babel">
         // React component
         var HelloWorld = React.createClass({
+            getDefaultProps: function () {
+                return {
+                    name: "Scott"
+                }
+            },
             render: function () {
                 return (
                     <h1>Hello {this.props.name}!</h1>
@@ -19,7 +24,7 @@
             }
         });
         ReactDOM.render(
-            <HelloWorld name="Pokemon" />,
+            <HelloWorld />,
             document.getElementById('area')
         );
     </script>
