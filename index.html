@@ -14,12 +14,12 @@
         var HelloWorld = React.createClass({
             render: function () {
                 return (
-                    <h1>Hello World!</h1>
+                    <h1>Hello {this.props.name}!</h1>
                 )
             }
         });
         ReactDOM.render(
-            <HelloWorld />,
+            <HelloWorld name="Pokemon" />,
             document.getElementById('area')
         );
     </script>
