@@ -26,6 +26,11 @@
                     value: 1
                 }
             },
+            componentDidMount: function () {
+                this.setState({
+                    value: 2
+                })
+            },
             render: function () {
                 var greeting = "World";
                 if (this.props.isPerson) {
