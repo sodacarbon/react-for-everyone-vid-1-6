@@ -31,6 +31,11 @@
                     value: this.state.value + 1
                 })
             },
+            // Custom method should begin with _
+            // calling this method without () , Not run
+            _clickMe: function () {
+                console.log("The button is clicked!");
+            },
             render: function () {
                 var greeting = "World";
                 if (this.props.isPerson) {
@@ -42,6 +47,7 @@
                     <div>
                         <h1>Hello {greeting}!</h1>
                         {this.state.value}
+                        <button onClick={this._clickMe}>Click Me</button>
                     </div>
                 )
             }
