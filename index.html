@@ -13,7 +13,8 @@
         // React component -- Parent
         var HelloWorld = React.createClass({
             propTypes: {
-                name: React.PropTypes.string.isRequired
+                name: React.PropTypes.string.isRequired,
+                isPerson: React.PropTypes.bool
             },
             getDefaultProps: function () {
                 return {
@@ -21,8 +22,13 @@
                 }
             },
             render: function () {
+                var greeting = "World";
+                if (this.props.isPerson) {
+                    // greeting = <Person name={this.props.name} /> // ok
+                    greeting = (<Person name={this.props.name} />) // ok
+                }
                 return (
-                    <h1>Hello <Person name={this.props.name} />!</h1>
+                    <h1>Hello {greeting}!</h1>
                 )
             }
         });
@@ -45,7 +51,7 @@
         });
 
         ReactDOM.render(
-            <HelloWorld name="Tim" />,
+            <HelloWorld name="Tim" isPerson={true} />,
             document.getElementById('area')
         );
     </script>
