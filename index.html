@@ -10,24 +10,42 @@
 <body>
     <div id="area"></div>
     <script type="text/babel">
-        // React component
+        // React component -- Parent
         var HelloWorld = React.createClass({
             propTypes: {
                 name: React.PropTypes.string.isRequired
             },
             getDefaultProps: function () {
                 return {
-                    // name: "Scott"
+                    name: "Scott"
                 }
             },
             render: function () {
                 return (
-                    <h1>Hello {this.props.name}!</h1>
+                    <h1>Hello <Person name={this.props.name} />!</h1>
                 )
             }
         });
+
+        // React component -- Child
+        var Person = React.createClass({
+            propTypes: {
+                name: React.PropTypes.string.isRequired
+            },
+            getDefaultProps: function () {
+                return {
+                    name: "Scott"
+                }
+            },
+            render: function () {
+                return (
+                    <span>{this.props.name}</span>
+                )
+            }
+        });
+
         ReactDOM.render(
-            <HelloWorld />,
+            <HelloWorld name="Tim" />,
             document.getElementById('area')
         );
     </script>
